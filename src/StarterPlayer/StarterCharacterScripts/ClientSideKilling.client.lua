@@ -14,7 +14,7 @@ local function handleProjectileCollision(hit, projectile)
 		-- Notify the server to confirm the enemy kill and handle server-side logic
 		--enemyKilledEvent:FireServer(enemy)
 			
-		print("-------")
+		print("-----------")
 		print("Client: Enemy and projectile destroyed")
 	end
 end
