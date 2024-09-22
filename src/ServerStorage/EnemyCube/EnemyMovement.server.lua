@@ -1,3 +1,6 @@
+-- This simple movement its alright for a prototype, but it really shouldn't be like this.
+-- There's isn't really pathfiding, it's just to straight ahead to the player.
+
 -- Variables
 local enemy = script.Parent
 local speed = enemy:GetAttribute("speed")  -- Speed of the enemy cube

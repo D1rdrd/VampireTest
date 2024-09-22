@@ -1,3 +1,6 @@
+-- This camera controller it's ok, but it really use some help.
+-- Would also be fine to have it like this, it's not a priority.
+
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 local humanoidRootPart = character:WaitForChild("HumanoidRootPart")

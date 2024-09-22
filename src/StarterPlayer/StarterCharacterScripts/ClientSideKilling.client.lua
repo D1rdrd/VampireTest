@@ -1,6 +1,9 @@
 -- Client-side projectile collision handling
---local ReplicatedStorage = game:GetService("ReplicatedStorage")
---local enemyKilledEvent = ReplicatedStorage:WaitForChild("EnemyKilledEvent")
+
+-- It shouldn't be really necessary to do this, but seeing as the
+-- delay between the server destroying proyectiles and the player
+-- updating its visualization, destroying it first client-side
+-- seems like a better solution.
 
 -- Function to handle projectile collisions on the client
 local function handleProjectileCollision(hit, projectile)
@@ -10,12 +13,10 @@ local function handleProjectileCollision(hit, projectile)
 		-- Destroy the projectile and enemy immediately on the client for visual feedback
 		projectile:Destroy()
 		enemy:Destroy()
-
-		-- Notify the server to confirm the enemy kill and handle server-side logic
-		--enemyKilledEvent:FireServer(enemy)
 			
-		print("-----------")
-		print("Client: Enemy and projectile destroyed")
+		-- Debug:
+		--print("-----------")
+		--print("Client: Enemy and projectile destroyed")
 	end
 end
 

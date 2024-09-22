@@ -1,12 +1,11 @@
--- Events
-local spawnBasicProjectileEvent = game.ReplicatedStorage:WaitForChild("SpawnProjectileEvent")
-
 -- Variables
-local player = game.Players.LocalPlayer
-local fireInterval = 1   -- Time between firing projectiles (1 second)
+local player = game.Players.LocalPlayer -- Get the player that is running this local script
 
 -- Fire a projectile every second
 while true do	
-	spawnBasicProjectileEvent:FireServer(player.Character.HumanoidRootPart.Position, player:GetMouse().Hit.p)
-	wait(fireInterval / player:GetAttribute("FireRateMultiplier"))
+	-- Fire the event with the player's and mouse's position
+	game.ReplicatedStorage.SpawnProjectileEvent:FireServer(player.Character.HumanoidRootPart.Position, player:GetMouse().Hit.p)
+
+	-- Wait according its fire rate
+	wait(1 / player:GetAttribute("FireRateMultiplier"))
 end 

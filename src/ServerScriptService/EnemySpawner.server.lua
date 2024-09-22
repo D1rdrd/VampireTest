@@ -1,7 +1,7 @@
 -- Variables
-local numberOfEnemies = game.ReplicatedStorage.Config.Enemy:GetAttribute("SpawnCount") -- Number of enemies to spawn
-local spawnDelay = game.ReplicatedStorage.Config.Enemy:GetAttribute("SpawnDelay") 
-local spawnRadius = game.ReplicatedStorage.Config.Enemy:GetAttribute("SpawnRadius")   -- Radius around the player where enemies will spawn
+local numberOfEnemies = game.ReplicatedStorage.Config.Enemy:GetAttribute("SpawnCount") 	-- Number of enemies to spawn
+local spawnDelay = game.ReplicatedStorage.Config.Enemy:GetAttribute("SpawnDelay") 		-- Delay (seconds) to spawning enemies
+local spawnRadius = game.ReplicatedStorage.Config.Enemy:GetAttribute("SpawnRadius")  	-- Radius around the player where enemies will spawn
 local enemyTemplate = game.ServerStorage.EnemyCube
 
 -- Function to spawn a single enemy
