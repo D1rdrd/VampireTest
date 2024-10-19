@@ -11,7 +11,7 @@ local function UpdateAttributesUI()
 	end
 
 	-- Update the label text with the constructed string
-	script.Parent.Parent.PlayerLabel.Text = str
+	script.Parent.Parent.PlayerStatGroup.PlayerLabel.Text = str
 end
 
 local function UpdateHealthUI() 
@@ -19,7 +19,7 @@ local function UpdateHealthUI()
 	if humanoid then
 		local health = humanoid.Health
 		local maxHealth = humanoid.MaxHealth
-		script.Parent.Parent.HealthLabel.Text = string.format("Health: %.1f / %.1f", health, maxHealth)
+		script.Parent.Parent.PlayerStatGroup.HealthLabel.Text = string.format("Health: %.1f / %.1f", health, maxHealth)
 	end
 end
 

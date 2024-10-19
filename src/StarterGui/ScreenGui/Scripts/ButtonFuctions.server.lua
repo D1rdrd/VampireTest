@@ -11,7 +11,7 @@ function DetectButtonBeingPushed()
 	-- Iterate over each attribute
 	for attributeName, _ in pairs(attributes) do
 		-- Find the corresponding button in the UI based on the attribute name
-		local button = script.Parent.Parent.UpgradeButtons:FindFirstChild(attributeName)
+		local button = script.Parent.Parent.DebugUpgradeGroup:FindFirstChild(attributeName)
 
 		-- If the button exists, connect its MouseButton1Click event
 		if button and button:IsA("TextButton") then
