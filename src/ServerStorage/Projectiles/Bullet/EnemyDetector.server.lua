@@ -12,7 +12,8 @@ local function checkCollision(hit, projectile)
 		enemyKilledEvent:Fire(projectile:GetAttribute("Player"), enemyPosition) 
 
 		-- Destroy the enemy and the projectile
-		print("Server: Destroyed enemy at:", enemyPosition, "by", projectile:GetAttribute("Player"))
+		-- Debug:
+		--print("Server: Destroyed enemy at:", enemyPosition, "by", projectile:GetAttribute("Player"))
 		enemy:Destroy()  -- Destroy the enemy
 		projectile:Destroy()  -- Destroy the projectile
 		

@@ -1,1 +1,202 @@
-{"name":"project","className":"DataModel","filePaths":["default.project.json"],"children":[{"name":"ServerScriptService","className":"ServerScriptService","children":[{"name":"EnemySpawner","className":"Script","filePaths":["src/ServerScriptService\\EnemySpawner.server.lua"]},{"name":"EventListeners","className":"Folder","filePaths":["src/ServerScriptService\\EventListeners\\init.meta.json"],"children":[{"name":"EnemyKilled","className":"Script","filePaths":["src/ServerScriptService\\EventListeners\\EnemyKilled.server.lua"]},{"name":"SpawnXPOrb","className":"Script","filePaths":["src/ServerScriptService\\EventListeners\\SpawnXPOrb.server.lua"]}]},{"name":"Players","className":"Folder","filePaths":["src/ServerScriptService\\Players\\init.meta.json"],"children":[{"name":"AttributeGiver","className":"Script","filePaths":["src/ServerScriptService\\Players\\AttributeGiver.server.lua"]}]},{"name":"Projectiles","className":"Folder","filePaths":["src/ServerScriptService\\Projectiles\\init.meta.json"],"children":[{"name":"BasicProjectileSpawner","className":"Script","filePaths":["src/ServerScriptService\\Projectiles\\BasicProjectileSpawner.server.lua"]}]}]},{"name":"ServerStorage","className":"ServerStorage","children":[{"name":"EnemyCube","className":"Part","filePaths":["src/ServerStorage\\EnemyCube\\init.meta.json"],"children":[{"name":"EnemyMovement","className":"Script","filePaths":["src/ServerStorage\\EnemyCube\\EnemyMovement.server.lua"]}]},{"name":"Projectiles","className":"Folder","filePaths":["src/ServerStorage\\Projectiles\\init.meta.json"],"children":[{"name":"Bullet","className":"Part","filePaths":["src/ServerStorage\\Projectiles\\Bullet\\init.meta.json"],"children":[{"name":"EnemyDetector","className":"Script","filePaths":["src/ServerStorage\\Projectiles\\Bullet\\EnemyDetector.server.lua"]}]}]}]},{"name":"StarterPlayer","className":"StarterPlayer","children":[{"name":"StarterCharacterScripts","className":"StarterCharacterScripts","children":[{"name":"CameraController","className":"LocalScript","filePaths":["src/StarterPlayer/StarterCharacterScripts\\CameraController.client.lua"]},{"name":"ClientSideKilling","className":"LocalScript","filePaths":["src/StarterPlayer/StarterCharacterScripts\\ClientSideKilling.client.lua"]},{"name":"ProjectileSpawner","className":"LocalScript","filePaths":["src/StarterPlayer/StarterCharacterScripts\\ProjectileSpawner.client.lua"]},{"name":"archived","className":"Folder","filePaths":["src/StarterPlayer/StarterCharacterScripts\\archived\\init.meta.json"],"children":[{"name":"AbilityQ","className":"LocalScript","filePaths":["src/StarterPlayer/StarterCharacterScripts\\archived\\AbilityQ.client.lua"]}]}]}]},{"name":"Workspace","className":"Workspace","children":[{"name":"Scripts","className":"Folder","filePaths":["src/Workspace\\Scripts\\init.meta.json"],"children":[{"name":"StatTracker","className":"ModuleScript","filePaths":["src/Workspace\\Scripts\\StatTracker.lua"]},{"name":"UIController","className":"ModuleScript","filePaths":["src/Workspace\\Scripts\\UIController.lua"]}]}]}]}
+{
+    "children": [
+        {
+            "children": [
+                {
+                    "className": "Script",
+                    "filePaths": [
+                        "src/ServerScriptService\\EnemySpawner.server.lua"
+                    ],
+                    "name": "EnemySpawner"
+                },
+                {
+                    "children": [
+                        {
+                            "className": "Script",
+                            "filePaths": [
+                                "src/ServerScriptService\\EventListeners\\EnemyKilled.server.lua"
+                            ],
+                            "name": "EnemyKilled"
+                        },
+                        {
+                            "className": "Script",
+                            "filePaths": [
+                                "src/ServerScriptService\\EventListeners\\SpawnXPOrb.server.lua"
+                            ],
+                            "name": "SpawnXPOrb"
+                        }
+                    ],
+                    "className": "Folder",
+                    "filePaths": [
+                        "src/ServerScriptService\\EventListeners\\init.meta.json"
+                    ],
+                    "name": "EventListeners"
+                },
+                {
+                    "children": [
+                        {
+                            "className": "Script",
+                            "filePaths": [
+                                "src/ServerScriptService\\Players\\AttributeGiver.server.lua"
+                            ],
+                            "name": "AttributeGiver"
+                        }
+                    ],
+                    "className": "Folder",
+                    "filePaths": [
+                        "src/ServerScriptService\\Players\\init.meta.json"
+                    ],
+                    "name": "Players"
+                },
+                {
+                    "children": [
+                        {
+                            "className": "Script",
+                            "filePaths": [
+                                "src/ServerScriptService\\Projectiles\\BasicProjectileSpawner.server.lua"
+                            ],
+                            "name": "BasicProjectileSpawner"
+                        }
+                    ],
+                    "className": "Folder",
+                    "filePaths": [
+                        "src/ServerScriptService\\Projectiles\\init.meta.json"
+                    ],
+                    "name": "Projectiles"
+                }
+            ],
+            "className": "ServerScriptService",
+            "name": "ServerScriptService"
+        },
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "className": "Script",
+                            "filePaths": [
+                                "src/ServerStorage\\EnemyCube\\EnemyMovement.server.lua"
+                            ],
+                            "name": "EnemyMovement"
+                        }
+                    ],
+                    "className": "Part",
+                    "filePaths": [
+                        "src/ServerStorage\\EnemyCube\\init.meta.json"
+                    ],
+                    "name": "EnemyCube"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "className": "Script",
+                                    "filePaths": [
+                                        "src/ServerStorage\\Projectiles\\Bullet\\EnemyDetector.server.lua"
+                                    ],
+                                    "name": "EnemyDetector"
+                                }
+                            ],
+                            "className": "Part",
+                            "filePaths": [
+                                "src/ServerStorage\\Projectiles\\Bullet\\init.meta.json"
+                            ],
+                            "name": "Bullet"
+                        }
+                    ],
+                    "className": "Folder",
+                    "filePaths": [
+                        "src/ServerStorage\\Projectiles\\init.meta.json"
+                    ],
+                    "name": "Projectiles"
+                }
+            ],
+            "className": "ServerStorage",
+            "name": "ServerStorage"
+        },
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "className": "LocalScript",
+                            "filePaths": [
+                                "src/StarterPlayer/StarterCharacterScripts\\CameraController.client.lua"
+                            ],
+                            "name": "CameraController"
+                        },
+                        {
+                            "className": "LocalScript",
+                            "filePaths": [
+                                "src/StarterPlayer/StarterCharacterScripts\\ClientSideKilling.client.lua"
+                            ],
+                            "name": "ClientSideKilling"
+                        },
+                        {
+                            "className": "LocalScript",
+                            "filePaths": [
+                                "src/StarterPlayer/StarterCharacterScripts\\ProjectileSpawner.client.lua"
+                            ],
+                            "name": "ProjectileSpawner"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "className": "LocalScript",
+                                    "filePaths": [
+                                        "src/StarterPlayer/StarterCharacterScripts\\archived\\AbilityQ.client.lua"
+                                    ],
+                                    "name": "AbilityQ"
+                                }
+                            ],
+                            "className": "Folder",
+                            "filePaths": [
+                                "src/StarterPlayer/StarterCharacterScripts\\archived\\init.meta.json"
+                            ],
+                            "name": "archived"
+                        }
+                    ],
+                    "className": "StarterCharacterScripts",
+                    "name": "StarterCharacterScripts"
+                }
+            ],
+            "className": "StarterPlayer",
+            "name": "StarterPlayer"
+        },
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "className": "ModuleScript",
+                            "filePaths": [
+                                "src/Workspace\\Scripts\\StatTracker.lua"
+                            ],
+                            "name": "StatTracker"
+                        },
+                        {
+                            "className": "ModuleScript",
+                            "filePaths": [
+                                "src/Workspace\\Scripts\\UIController.lua"
+                            ],
+                            "name": "UIController"
+                        }
+                    ],
+                    "className": "Folder",
+                    "filePaths": [
+                        "src/Workspace\\Scripts\\init.meta.json"
+                    ],
+                    "name": "Scripts"
+                }
+            ],
+            "className": "Workspace",
+            "name": "Workspace"
+        }
+    ],
+    "className": "DataModel",
+    "filePaths": [
+        "default.project.json"
+    ],
+    "name": "project"
+}

@@ -3,7 +3,7 @@
 
 -- Variables
 local enemy = script.Parent
-local speed = enemy:GetAttribute("speed")  -- Speed of the enemy cube
+local speed = enemy:GetAttribute("Speed")  -- Speed of the enemy cube
 
 -- Function to find the nearest player
 local function findNearestPlayer()
