@@ -13,6 +13,11 @@ local levelUpLabel = player.PlayerGui.ScreenGui.PlayerStatGroup.LevelUpLabel
 local upgradeLabel = player.PlayerGui.ScreenGui.LevelUpUpgradeGroup
 
 
+-- Declare variables to store event connections
+local upgrade1Connection
+local upgrade2Connection
+local upgrade3Connection
+
 function UpgradeMenuShow()
 	-- Get the player attributes
 	local attributes = player:GetAttributes()
@@ -52,32 +57,36 @@ function UpgradeMenuShow()
 	upgradeLabel.Upgrade2.Text = selectedAttributes[2]
 	upgradeLabel.Upgrade3.Text = selectedAttributes[3]
 
-	-- ToDo: Make a function that:
+	-- Done: Make a function that:
 	-- - Increases the attribute
 	-- - Updates the player stat window
 	-- - Hides the upgrade menu when a button is pressed
 
 	function InitMenuButtons(attribute)
-		-- Increases the attribute
-		--AttributeModifier.IncreaseAttribute(player, attribute)
-
 		-- Call the event to increase the attribute
+		-- *Also updates the player stat window
 		modifyAttributeEvent:FireServer(attribute)
-
-		-- Updates the player stat window
+		
+		-- Hide the upgrade menu when a button is pressed
+		upgradeLabel.Visible = false
 
 	end
 
-	-- Assign function to each button when clicked
-	upgradeLabel.Upgrade1.Activated:Connect(function()
+	-- Disconnect any previous connections
+	if upgrade1Connection then upgrade1Connection:Disconnect() end
+	if upgrade2Connection then upgrade2Connection:Disconnect() end
+	if upgrade3Connection then upgrade3Connection:Disconnect() end
+
+	-- Connect new event handlers
+	upgrade1Connection = upgradeLabel.Upgrade1.Activated:Connect(function()
 		InitMenuButtons(selectedAttributes[1])
 	end)
 
-	upgradeLabel.Upgrade2.Activated:Connect(function()
+	upgrade2Connection = upgradeLabel.Upgrade2.Activated:Connect(function()
 		InitMenuButtons(selectedAttributes[2])
 	end)
 
-	upgradeLabel.Upgrade3.Activated:Connect(function()
+	upgrade3Connection = upgradeLabel.Upgrade3.Activated:Connect(function()
 		InitMenuButtons(selectedAttributes[3])
 	end)
 	

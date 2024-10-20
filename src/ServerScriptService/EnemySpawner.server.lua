@@ -27,4 +27,8 @@ end
 for _ = 0, numberOfEnemies do
 	spawnEnemy()
 	wait(spawnDelay)
+	
+	-- ToDo: Function to spawn enemies faster as time goes on
+	-- Should have an algorithm or somehing here, for now it should work
+	spawnDelay = spawnDelay * 0.99
 end
