@@ -1,6 +1,9 @@
 -- Wait for the BindableEvent to be ready
 local levelUpBindable = game.ReplicatedStorage:WaitForChild("Events"):WaitForChild("LevelUp")
 
+-- Events
+local modifyAttributeEvent = game.ReplicatedStorage.Events.UpgradeAttributeEvent
+
 -- Modules
 local AttributeModifier = require(game.ReplicatedStorage.Scripts.AttributeModifier)
 
@@ -54,18 +57,28 @@ function UpgradeMenuShow()
 	-- - Updates the player stat window
 	-- - Hides the upgrade menu when a button is pressed
 
+	function InitMenuButtons(attribute)
+		-- Increases the attribute
+		--AttributeModifier.IncreaseAttribute(player, attribute)
+
+		-- Call the event to increase the attribute
+		modifyAttributeEvent:FireServer(attribute)
+
+		-- Updates the player stat window
+
+	end
 
 	-- Assign function to each button when clicked
 	upgradeLabel.Upgrade1.Activated:Connect(function()
-		AttributeModifier.IncreaseAttribute(player, selectedAttributes[1])
+		InitMenuButtons(selectedAttributes[1])
 	end)
 
 	upgradeLabel.Upgrade2.Activated:Connect(function()
-		AttributeModifier.IncreaseAttribute(player, selectedAttributes[2])
+		InitMenuButtons(selectedAttributes[2])
 	end)
 
 	upgradeLabel.Upgrade3.Activated:Connect(function()
-		AttributeModifier.IncreaseAttribute(player, selectedAttributes[3])
+		InitMenuButtons(selectedAttributes[3])
 	end)
 	
 	
