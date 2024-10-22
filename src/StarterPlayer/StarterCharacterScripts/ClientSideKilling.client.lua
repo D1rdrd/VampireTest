@@ -12,12 +12,23 @@ local function handleProjectileCollision(hit, projectile)
 
 		-- Destroy the projectile and enemy immediately on the client for visual feedback
 		projectile:Destroy()
-		enemy:Destroy()
+
+		enemy:SetAttribute("Health", enemy:GetAttribute("Health") - projectile:GetAttribute("Damage"))
+
+		if enemy:GetAttribute("Health") <= 0 then
+			enemy:Destroy()
+		else
+			local percentaje = enemy:GetAttribute("Health") / enemy:GetAttribute("MaxHealth")
+			enemy.HealthBarGui.CurrentHealth.Size = UDim2.new(percentaje, 0, 1, 0) 
+		end
+
+		
 			
 		-- Debug:
 		--print("-----------")
 		--print("Client: Enemy and projectile destroyed")
 	end
+	wait(0.1)
 end
 
 -- Function to handle each projectile's Touched event

@@ -97,7 +97,8 @@ function UpgradeMenuShow()
 	        BulletSpeedMultiplier = "rbxassetid://104328546195261",
 	        PlayerHealthMultiplier = "rbxassetid://125749238848302",
 	        PlayerSpeedMultiplier = "rbxassetid://114512674208973",
-	        FireRateMultiplier = "rbxassetid://80504041841000"
+	        FireRateMultiplier = "rbxassetid://80504041841000",
+			PlayerDamageMultiplier = "rbxassetid://72026629382731"
 	    }
 	
 	    -- Set the image if the attribute exists

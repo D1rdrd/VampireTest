@@ -8,16 +8,36 @@ local function checkCollision(hit, projectile)
 		local enemy = hit
 		local enemyPosition = enemy.Position  -- Get the position of the enemy's PrimaryPart
 		
-		-- Fire the enemy killed event
-		enemyKilledEvent:Fire(projectile:GetAttribute("Player"), enemyPosition) 
+		
 
 		-- Destroy the enemy and the projectile
 		-- Debug:
 		--print("Server: Destroyed enemy at:", enemyPosition, "by", projectile:GetAttribute("Player"))
-		enemy:Destroy()  -- Destroy the enemy
+		
 		projectile:Destroy()  -- Destroy the projectile
 		
+		
+		
+		enemy:SetAttribute("Health", enemy:GetAttribute("Health") - projectile:GetAttribute("Damage"))
+
+		if enemy:GetAttribute("Health") <= 0 then
+			enemy:Destroy()
+			-- Fire the enemy killed event
+			enemyKilledEvent:Fire(projectile:GetAttribute("Player"), enemyPosition) 
+		else
+			local percentaje = enemy:GetAttribute("Health") / enemy:GetAttribute("MaxHealth")
+			enemy.HealthBarGui.CurrentHealth.Size = UDim2.new(percentaje, 0, 0.5, 0) 
+		end
+
+		
+
+
+
+		--enemy:Destroy()  -- Destroy the enemy
+		
+		
 	end
+	wait(0.1)
 end
 
 -- Function to handle each projectile

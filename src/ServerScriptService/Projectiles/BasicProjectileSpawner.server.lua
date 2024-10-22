@@ -28,4 +28,7 @@ game.ReplicatedStorage.SpawnProjectileEvent.OnServerEvent:Connect(function(playe
     -- Set to destroy the projectile after 5 seconds
 	game.Debris:AddItem(projectile, 5)
 	-- * It may be nice to have a BulletDurationMultiplier, need to account for the bullet lifespan aswell
+
+	
+	projectile:SetAttribute("Damage", projectile:GetAttribute("Damage") * player:GetAttribute("PlayerDamageMultiplier"))
 end)
