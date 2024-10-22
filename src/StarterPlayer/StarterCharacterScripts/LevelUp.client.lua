@@ -90,6 +90,32 @@ function UpgradeMenuShow()
 		InitMenuButtons(selectedAttributes[3])
 	end)
 	
+	-- Function to update the image based on selected attribute
+	local function updateImage(selectedAttribute, imageLabel)
+	    local attributeToImage = {
+	        XPMultiplier = "rbxassetid://74295063598347",
+	        BulletSpeedMultiplier = "rbxassetid://104328546195261",
+	        PlayerHealthMultiplier = "rbxassetid://125749238848302",
+	        PlayerSpeedMultiplier = "rbxassetid://114512674208973",
+	        FireRateMultiplier = "rbxassetid://80504041841000"
+	    }
+	
+	    -- Set the image if the attribute exists
+	    if attributeToImage[selectedAttribute] then
+	        upgradeLabel["ImageLabel" .. imageLabel].Image = attributeToImage[selectedAttribute]
+	    end
+	end
+	
+	-- Updating the images for each selected attribute
+	for i = 1, 3 do
+	    if selectedAttributes[i] then
+	        updateImage(selectedAttributes[i], i)
+	    end
+	end
+
+	
+
+
 	
 	-- Finally, show the upgrade menu to the player
 	upgradeLabel.Visible = true
