@@ -1,5 +1,8 @@
 -- Hide LevelUp Message
 script.Parent.PlayerStatGroup.LevelUpLabel.Visible = false
 
--- Hide player's Upgrade Menu
+-- Hide Player's Upgrade Menu
 script.Parent.LevelUpUpgradeGroup.Visible = false
+
+-- Hide Debug's Upgrade Menu
+script.Parent.DebugUpgradeGroup.Visible = false
