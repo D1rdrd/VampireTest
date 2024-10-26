@@ -7,7 +7,8 @@ game.ReplicatedStorage.Events.EnemyKilled.Event:Connect(function(player, coords)
 	--print("Event: Enemy killed at", coords, "by", player)
 	
 	--Update player UnitKills attribute
-	player:GetAttribute("")
+	local realplayer = game.Players:FindFirstChild(player)  
+	realplayer:SetAttribute("UnitKills", realplayer:GetAttribute("UnitKills") + 1)
 
 	-- Spawn XP orb at position
 	createXPEvent:Fire(coords)
