@@ -1,35 +1,45 @@
 -- Client-side projectile collision handling
 
+-- * Is it tho?
 -- It shouldn't be really necessary to do this, but seeing as the
 -- delay between the server destroying proyectiles and the player
 -- updating its visualization, destroying it first client-side
 -- seems like a better solution.
+
+local hitProjectiles = {}
 
 -- Function to handle projectile collisions on the client
 local function handleProjectileCollision(hit, projectile)
 	if hit and hit.Parent and hit.Parent:FindFirstChild("EnemyCube") then
 		local enemy = hit
 
-		-- Destroy the projectile and enemy immediately on the client for visual feedback
+		-- Check if the projectile has already hit something
+		if hitProjectiles[projectile] then
+			return  -- Exit if it has already hit something
+		end
+		
+		-- Mark this projectile as having hit something
+		hitProjectiles[projectile] = true
+
+		-- Destroy the projectile immediately on the client for visual feedback
 		projectile:Destroy()
 
-		enemy:SetAttribute("Health", enemy:GetAttribute("Health") - projectile:GetAttribute("Damage"))
+		-- Fire the health update event only once
+		game.ReplicatedStorage.Events.UpdateHealthEvent:Fire(enemy, projectile:GetAttribute("Damage"))
 
-		if enemy:GetAttribute("Health") <= 0 then
-			enemy:Destroy()
-		else
-			local percentaje = enemy:GetAttribute("Health") / enemy:GetAttribute("MaxHealth")
-			enemy.HealthBarGui.CurrentHealth.Size = UDim2.new(percentaje, 0, 1, 0) 
-		end
-
+		-- Update UI on the client
+		-- * Not necessary as it gets updated 
 		
-			
-		-- Debug:
-		--print("-----------")
-		--print("Client: Enemy and projectile destroyed")
+		print(hitProjectiles)
+
+		wait(1)
+		-- Remove projectile entry from the table		
+		hitProjectiles[projectile] = nil
+
+		print(hitProjectiles)
 	end
-	wait(0.1)
 end
+
 
 -- Function to handle each projectile's Touched event
 local function handleProjectile(projectile)

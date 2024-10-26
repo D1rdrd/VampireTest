@@ -37,7 +37,6 @@ local function checkCollision(hit, projectile)
 		
 		
 	end
-	wait(0.1)
 end
 
 -- Function to handle each projectile
