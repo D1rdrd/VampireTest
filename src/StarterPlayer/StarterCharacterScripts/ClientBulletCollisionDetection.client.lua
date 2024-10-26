@@ -11,8 +11,6 @@ local hitProjectiles = {}
 -- Function to handle projectile collisions on the client
 local function handleProjectileCollision(hit, projectile)
 	if hit and hit.Parent and hit.Parent:FindFirstChild("EnemyCube") then
-		local enemy = hit
-
 		-- Check if the projectile has already hit something
 		if hitProjectiles[projectile] then
 			return  -- Exit if it has already hit something
@@ -25,18 +23,16 @@ local function handleProjectileCollision(hit, projectile)
 		projectile:Destroy()
 
 		-- Fire the health update event only once
-		game.ReplicatedStorage.Events.UpdateHealthEvent:Fire(enemy, projectile:GetAttribute("Damage"))
+		--local enemy = hit
+		--game.ReplicatedStorage.Events.UpdateHealthEvent:Fire(enemy, projectile:GetAttribute("Damage"))
 
 		-- Update UI on the client
 		-- * Not necessary as it gets updated 
-		
-		print(hitProjectiles)
 
-		wait(1)
-		-- Remove projectile entry from the table		
+		-- Remove projectile entry from the table
+		wait(1)				
 		hitProjectiles[projectile] = nil
 
-		print(hitProjectiles)
 	end
 end
 
