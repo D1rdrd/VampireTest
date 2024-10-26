@@ -1,5 +1,5 @@
 -- Listen to the event being triggered
-game.ReplicatedStorage.SpawnProjectileEvent.OnServerEvent:Connect(function(player, playerPosition, mousePosition)
+game.ReplicatedStorage.Events.SpawnProjectileEvent.OnServerEvent:Connect(function(player, playerPosition, mousePosition)
     -- Copy the XP Orb object template
 	local projectile = game.ServerStorage.Projectiles.Bullet:Clone()
 	

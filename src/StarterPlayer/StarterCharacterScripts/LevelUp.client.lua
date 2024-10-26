@@ -1,4 +1,4 @@
--- Wait for the BindableEvent to be ready
+-- Wait for the LevelUp BindableEvent to be ready
 local levelUpBindable = game.ReplicatedStorage:WaitForChild("Events"):WaitForChild("LevelUp")
 
 -- Events
