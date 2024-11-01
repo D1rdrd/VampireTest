@@ -2,7 +2,7 @@ local player = script.Parent.Parent.Parent.Parent
 
 local function UpdateAttributesUI()
 	-- Retrieve all attributes and construct the display string
-	local attributes = player:GetAttributes()
+	local attributes = player.Attributes:GetAttributes()
 	local str = ""
 
 	-- Iterate over each attribute and add its name and value to the string

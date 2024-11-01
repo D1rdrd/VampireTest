@@ -6,7 +6,7 @@ local AttributeModifier = require(game.ReplicatedStorage.Scripts.AttributeModifi
 -- Function to detect when a button is pressed and increase its corresponding attribute
 function DetectButtonBeingPushed()
 	-- Get all attributes of the player
-	local attributes = player:GetAttributes()
+	local attributes = player.Attributes:GetAttributes()
 
 	-- Iterate over each attribute
 	for attributeName, _ in pairs(attributes) do

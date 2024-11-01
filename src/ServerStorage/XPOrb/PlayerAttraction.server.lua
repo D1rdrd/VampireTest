@@ -43,7 +43,7 @@ game:GetService("RunService").Heartbeat:Connect(function()
         if orb:GetAttribute("Tick") == 3 then
             -- Add the experience to the team
 			
-			Module.IncreaseXP(orb:GetAttribute("XPAmmount"), targetPlayer:GetAttribute("XPMultiplier"))
+			Module.IncreaseXP(orb:GetAttribute("XPAmmount"), targetPlayer.Attributes:GetAttribute("XPMultiplier"))
 
             orb:Destroy()  -- Destroy the XP orb
         end

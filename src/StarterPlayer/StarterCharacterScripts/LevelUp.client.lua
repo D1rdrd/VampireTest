@@ -20,7 +20,7 @@ local upgrade3Connection
 
 function UpgradeMenuShow()
 	-- Get the player attributes
-	local attributes = player:GetAttributes()
+	local attributes = player.Attributes:GetAttributes()
 
 	-- Store the attribute names in a table
 	local attributeNames = {}

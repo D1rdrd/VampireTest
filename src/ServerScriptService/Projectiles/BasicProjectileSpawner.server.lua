@@ -23,12 +23,12 @@ game.ReplicatedStorage.Events.SpawnProjectileEvent.OnServerEvent:Connect(functio
 		mousePosition.Z - playerPosition.Z
 	).Unit 	-- Normalize the vector to have a unit length
 	* 50 	-- Make the projectile don't go shitslow
-	* player:GetAttribute("BulletSpeedMultiplier")  -- Grab Bullet Speed from the Player's Attributes
+	* player.Attributes:GetAttribute("BulletSpeedMultiplier")  -- Grab Bullet Speed from the Player's Attributes
 	
     -- Set to destroy the projectile after 5 seconds
 	game.Debris:AddItem(projectile, 5)
 	-- * It may be nice to have a BulletDurationMultiplier, need to account for the bullet lifespan aswell
 
 	
-	projectile:SetAttribute("Damage", projectile:GetAttribute("Damage") * player:GetAttribute("PlayerDamageMultiplier"))
+	projectile:SetAttribute("Damage", projectile:GetAttribute("Damage") * player.Attributes:GetAttribute("PlayerDamageMultiplier"))
 end)
