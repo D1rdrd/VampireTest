@@ -3,15 +3,8 @@ local spawnEnemyEvent = game.ReplicatedStorage.Events.SpawnEnemyEvent
 
 spawnEnemyEvent.Event:Connect(function(positionToSpawn, type)
 
-	local enemy
-
-	if type then
-		-- Create a clone of the enemy template
-		enemy = game.ServerStorage:FindFirstChild(type):Clone()
-	else
-		-- If no type is given, spawn a cube
-		enemy = game.ServerStorage.EnemyCube:Clone()
-	end		
+	-- Create a clone of the enemy template
+	local enemy = game.ServerStorage:FindFirstChild(type or "EnemyCube"):Clone()	
 
 	-- Set a random color to the enemy
 	enemy.Color = Color3.new(math.random(), math.random(), math.random())

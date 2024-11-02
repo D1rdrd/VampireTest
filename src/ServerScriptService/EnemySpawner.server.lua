@@ -17,7 +17,10 @@ for _ = 0, numberOfEnemies do
 	)
 
 	-- Trigger the event to spawn an enemy
-	spawnEnemyEvent:Fire(enemyRandomPosition, "EnemyCube")
+	spawnEnemyEvent:Fire(enemyRandomPosition)
+
+	--spawnEnemyEvent:Fire(enemyRandomPosition, "EnemyCube")
+	spawnEnemyEvent:Fire(enemyRandomPosition, "EnemyBall")
 
 	wait(spawnDelay)
 	
