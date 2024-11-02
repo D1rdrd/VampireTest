@@ -1,8 +1,8 @@
 -- Events
-local createXPEvent = game.ReplicatedStorage.SpawnXPOrbEvent
+local createXPEvent = game.ReplicatedStorage.Events.SpawnXPOrbEvent
 
 -- Event Listener
-game.ReplicatedStorage.Events.EnemyKilled.Event:Connect(function(player, coords)
+game.ReplicatedStorage.Events.KilledEnemyEvent.Event:Connect(function(player, coords)
 	-- Debug
 	--print("Event: Enemy killed at", coords, "by", player)
 	

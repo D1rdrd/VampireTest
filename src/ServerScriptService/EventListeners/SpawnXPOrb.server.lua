@@ -1,5 +1,5 @@
--- Listen to the event being triggered
-local createXPOrbEvent = game.ReplicatedStorage.SpawnXPOrbEvent
+-- Event Listener
+local createXPOrbEvent = game.ReplicatedStorage.Events.SpawnXPOrbEvent
 
 createXPOrbEvent.Event:Connect(function(positionToSpawn)
 	-- Copy the XP Orb object template
@@ -7,6 +7,5 @@ createXPOrbEvent.Event:Connect(function(positionToSpawn)
 	-- Set its position
 	orb.Position = positionToSpawn
 	-- Add its respective folder to the workspace
-	orb.Parent = workspace:WaitForChild("XP")
-	
+	orb.Parent = workspace:WaitForChild("XP")	
 end)

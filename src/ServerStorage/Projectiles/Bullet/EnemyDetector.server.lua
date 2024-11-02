@@ -1,5 +1,5 @@
 -- Events
-local enemyKilledEvent = game.ReplicatedStorage.Events.EnemyKilled
+local enemyKilledEvent = game.ReplicatedStorage.Events.KilledEnemyEvent
 
 -- Function to check collision between projectile and enemy
 local function checkCollision(hit, projectile)
